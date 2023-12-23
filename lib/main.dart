@@ -35,10 +35,10 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
-          // home: FirebaseAuth.instance.currentUser != null
-          //     ? HomeScreen()
-          //     : LoginScreen(),
-          home: HomeScreen()),
+          home: FirebaseAuth.instance.currentUser != null
+              ? HomeScreen()
+              : LoginScreen()),
+      // home: HomeScreen()),
     );
   }
 }
