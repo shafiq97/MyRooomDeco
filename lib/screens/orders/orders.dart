@@ -79,7 +79,7 @@ class _OrdersState extends State<Orders> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'My Orders',
           style: TextStyle(color: Colors.black),
         ),
@@ -105,7 +105,7 @@ class _OrdersState extends State<Orders> {
                       borderRadius: BorderRadius.circular(18),
                       color: Colors.white,
                     ),
-                    margin: EdgeInsetsDirectional.all(15.00),
+                    margin: const EdgeInsetsDirectional.all(15.00),
                     child: Padding(
                       padding: const EdgeInsets.symmetric(
                           vertical: 5, horizontal: 10),
@@ -151,7 +151,7 @@ class _OrdersState extends State<Orders> {
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 5,
                                   ),
                                   Text(
@@ -177,7 +177,7 @@ class _OrdersState extends State<Orders> {
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 5,
                                   ),
                                   Row(
@@ -191,8 +191,8 @@ class _OrdersState extends State<Orders> {
                                           fontWeight: FontWeight.bold,
                                         ),
                                       ),
-                                      Text(
-                                        ' \$',
+                                      const Text(
+                                        'MYR',
                                         style: TextStyle(
                                             color: Colors.orangeAccent,
                                             fontWeight: FontWeight.w900,
@@ -214,7 +214,7 @@ class _OrdersState extends State<Orders> {
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 5,
                                   ),
                                   Container(
@@ -231,19 +231,19 @@ class _OrdersState extends State<Orders> {
                                       ),
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 5,
                                   ),
                                 ],
                               ),
                               Container(
-                                padding: EdgeInsets.symmetric(
+                                padding: const EdgeInsets.symmetric(
                                     horizontal: 15, vertical: 5),
                                 height: 1,
                                 color: Colors.grey[200],
                                 width: size.width * 0.8,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 15,
                               ),
                               Row(
@@ -257,7 +257,7 @@ class _OrdersState extends State<Orders> {
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 5,
                                   ),
                                   IconButton(

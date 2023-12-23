@@ -17,29 +17,24 @@ Expanded(
       child: Image.asset("assets/s20/wardrobe.png"),
     ),
 ),
-            Expanded(
-              child: Container(
-
-                child:Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    SizedBox(height: 10,),
-                    Text('product name'),
-                    SizedBox(height: 10,),
-                    Text('50\$'),
-
-
-                  ],
-                ),
+            const Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SizedBox(height: 10,),
+                  Text('product name'),
+                  SizedBox(height: 10,),
+                  Text('50\$'),
+                ],
               ),
             ),
             Expanded(
               child: Column(
                 children: [
-                  Icon(Icons.delete,size: 30),
+                  const Icon(Icons.delete,size: 30),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: ElevatedButton(onPressed: (){}, child: Text('+ Add')),
+                    child: ElevatedButton(onPressed: (){}, child: const Text('+ Add')),
                   ),
                 ],
               ),

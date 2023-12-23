@@ -100,12 +100,12 @@ class _CartPageState extends State<CartPage> {
             onPressed: () {
               Navigator.pop(context);
             },
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back_ios,
               color: Colors.black,
             )),
         backgroundColor: Colors.white,
-        title: Text(
+        title: const Text(
           'Shopping Cart',
           style: TextStyle(color: Colors.black),
         ),
@@ -169,7 +169,7 @@ class _CartPageState extends State<CartPage> {
                                     fontWeight: FontWeight.w300,
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 12,
                                 ),
                                 Row(
@@ -179,7 +179,7 @@ class _CartPageState extends State<CartPage> {
                                       height: 20,
                                       child: FloatingActionButton.small(
                                         backgroundColor: Colors.orangeAccent,
-                                        child: Icon(
+                                        child: const Icon(
                                           Icons.add,
                                           size: 15,
                                         ),
@@ -223,7 +223,7 @@ class _CartPageState extends State<CartPage> {
                                           horizontal: 10),
                                       child: Text(
                                         '${item.quantity}',
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                             fontSize: 20,
                                             fontWeight: FontWeight.w900),
                                       ),
@@ -233,7 +233,7 @@ class _CartPageState extends State<CartPage> {
                                       height: 20,
                                       child: FloatingActionButton.small(
                                           backgroundColor: Colors.orangeAccent,
-                                          child: Icon(
+                                          child: const Icon(
                                             Icons.remove,
                                             size: 15,
                                           ),
@@ -336,7 +336,7 @@ class _CartPageState extends State<CartPage> {
                                               print("delete cart item");
                                               total();
                                             },
-                                            icon: Icon(Icons.delete)),
+                                            icon: const Icon(Icons.delete)),
                                       ),
                                     ),
                                   ],
@@ -358,7 +358,7 @@ class _CartPageState extends State<CartPage> {
                 width: double.infinity,
                 decoration: BoxDecoration(
                   color: Colors.grey[100],
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                       topRight: Radius.circular(10),
                       topLeft: Radius.circular(10)),
                 ),
@@ -368,8 +368,8 @@ class _CartPageState extends State<CartPage> {
                       height: size.height * 0.035,
                     ),
                     Text(
-                      'Total Amount :  ' + total().toString() + '\$',
-                      style: TextStyle(
+                      'Total Amount :  ' + total().toString() + '\MYR',
+                      style: const TextStyle(
                         fontSize: 25,
                         fontWeight: FontWeight.w900,
                         overflow: TextOverflow.ellipsis,
@@ -427,37 +427,37 @@ class _CartPageState extends State<CartPage> {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text("Payment by cash on delviery "),
+          const Text("Payment by cash on delviery "),
           TextField(
             controller: name,
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               hintText: 'Name',
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
           TextField(
             controller: email,
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               hintText: 'Email',
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
           TextField(
             controller: addresse,
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               hintText: 'Address',
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
           TextField(
             controller: PhoneNumber,
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               hintText: 'Phone',
             ),
           ),
