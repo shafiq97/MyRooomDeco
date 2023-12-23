@@ -31,11 +31,11 @@ class MyApp extends StatelessWidget {
       },
       child: MaterialApp(
           title: 'Smart Home',
-          debugShowCheckedModeBanner: false,
+          debugShowCheckedModeBanner: false, 
           theme: ThemeData(
             primarySwatch: Colors.blue,
-          ),
-          home: FirebaseAuth.instance.currentUser != null
+          ), 
+          home: FirebaseAuth.instance.currentUser != n
               ? HomeScreen()
               : LoginScreen()),
       // home: HomeScreen()),

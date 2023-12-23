@@ -14,36 +14,32 @@ import 'package:vector_math/vector_math_64.dart';
 import 'package:path_provider/path_provider.dart';
 import 'dart:developer';
 import 'dart:io';
-int counter=0;
-var selected;
 
+int counter = 0;
+var selected;
 
 class AR_Session extends StatefulWidget {
   final String value;
-  const AR_Session(
-      {
-        Key? key,
-        required this.value,
-      }):super(key: key);
+  const AR_Session({
+    Key? key,
+    required this.value,
+  }) : super(key: key);
 
   @override
   State<StatefulWidget> createState() {
-    selected=value.toString();
+    selected = value.toString();
     // TODO: implement createState
     return AR_Session_state();
   }
 }
 
-class AR_Session_state extends State<AR_Session>
-{
-
+class AR_Session_state extends State<AR_Session> {
   late ARSessionManager arSessionManager;
   late ARObjectManager arObjectManager;
   late ARAnchorManager arAnchorManager;
 
   List<ARNode> nodes = [];
   List<ARAnchor> anchors = [];
-
 
   @override
   Widget build(BuildContext context) {
@@ -53,29 +49,28 @@ class AR_Session_state extends State<AR_Session>
         ),
         body: Container(
             child: Stack(children: [
-              ARView(
-                onARViewCreated: onARViewCreated,
-                planeDetectionConfig: PlaneDetectionConfig.horizontalAndVertical,
-              ),
-              Align(
-                alignment: FractionalOffset.bottomCenter,
-                child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      ElevatedButton(
-                          onPressed: onRemoveEverything,
-                          child: Text("Remove Everything")),
-                      ElevatedButton(
-                          onPressed: (){
-                            onRemoveEverything();
-                            dispose();
-                            Navigator.pop(context);
-                          },
-                          child: Text("back")),
-                    ]
-                ),
-              )
-            ])));
+          ARView(
+            onARViewCreated: onARViewCreated,
+            planeDetectionConfig: PlaneDetectionConfig.horizontalAndVertical,
+          ),
+          Align(
+            alignment: FractionalOffset.bottomCenter,
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  ElevatedButton(
+                      onPressed: onRemoveEverything,
+                      child: Text("Remove Everything")),
+                  ElevatedButton(
+                      onPressed: () {
+                        onRemoveEverything();
+                        dispose();
+                        Navigator.pop(context);
+                      },
+                      child: Text("back")),
+                ]),
+          )
+        ])));
   }
 
   void onARViewCreated(
@@ -87,27 +82,27 @@ class AR_Session_state extends State<AR_Session>
     this.arObjectManager = arObjectManager;
     this.arAnchorManager = arAnchorManager;
     this.arSessionManager.onInitialize(
-      handleRotation: true,
-      handlePans: true,
-      handleTaps: true ,
-      showFeaturePoints: false,
-      showPlanes: true,
-      showAnimatedGuide: true,
-    );
+          handleRotation: true,
+          handlePans: true,
+          handleTaps: true,
+          showFeaturePoints: false,
+          showPlanes: true,
+          showAnimatedGuide: true,
+        );
     this.arObjectManager.onInitialize();
     this.arSessionManager.onPlaneOrPointTap = onPlaneOrPointTapped;
     this.arObjectManager.onNodeTap = onNodeTapped;
   }
+
   @override
-  Future <void> dispose() async{
+  Future<void> dispose() async {
     // AR_Session_state().dispose();
     arSessionManager.dispose();
-    print("Disposed oxem belah");
     super.dispose();
   }
 
   Future<void> onRemoveEverything() async {
-    counter=0;
+    counter = 0;
     nodes.forEach((node) {
       this.arObjectManager.removeNode(node);
     });
@@ -118,15 +113,14 @@ class AR_Session_state extends State<AR_Session>
   }
   /*Future<void> oncleaning() async {
     counter=0;
-    *//*nodes.forEach((node) {
+    */ /*nodes.forEach((node) {
       this.arObjectManager.removeNode(node);
-    });*//*
+    });*/ /*
 
     print("********SE7AAA*********");
     dispose();
 
   }*/
-
 
   Future<void> onNodeTapped(List<String> nodes) async {
     var number = nodes.length;
@@ -135,25 +129,26 @@ class AR_Session_state extends State<AR_Session>
 
   Future<void> onPlaneOrPointTapped(
       List<ARHitTestResult> hitTestResults) async {
-    if(counter>0)
+    if (counter > 0)
       print("");
     else {
       this.arSessionManager.onError("aho defnah");
       counter++;
       var singleHitTestResult = hitTestResults.firstWhere(
-              (hitTestResult) => hitTestResult.type == ARHitTestResultType.plane);
+          (hitTestResult) => hitTestResult.type == ARHitTestResultType.plane);
       if (singleHitTestResult != null) {
         var newAnchor =
-        ARPlaneAnchor(transformation: singleHitTestResult.worldTransform);
+            ARPlaneAnchor(transformation: singleHitTestResult.worldTransform);
         bool? didAddAnchor = await this.arAnchorManager.addAnchor(newAnchor);
 
         if (didAddAnchor!) {
           this.anchors.add(newAnchor);
           // Add note to anchor
-          var newcont=Container(child: Text("seha"),);
+          var newcont = Container(
+            child: Text("seha"),
+          );
 
           var newNode = ARNode(
-
             type: NodeType.localGLTF2,
             // uri: "assets/s3/scene.gltf",
             // uri: "assets/s4/Format2.gltf",
@@ -166,17 +161,16 @@ class AR_Session_state extends State<AR_Session>
             // uri: "assets/s10/office_chair.gltf",
             // selected= "assets/s11/water_cooler.gltf";//
             // selected="assets/s12/computer_chair.gltf";
-            uri:selected,
+            uri: selected,
             // uri: "assets/s10/office_chair.gltf",
             transformation: singleHitTestResult.worldTransform,
             scale: Vector3(0.9, 0.9, 0.9),
             position: Vector3(0, 0, 0),
-
-
           );
 
-          bool? didAddNodeToAnchor =
-          await this.arObjectManager.addNode(newNode, planeAnchor: newAnchor);
+          bool? didAddNodeToAnchor = await this
+              .arObjectManager
+              .addNode(newNode, planeAnchor: newAnchor);
           if (didAddNodeToAnchor!) {
             this.nodes.add(newNode);
           } else {
@@ -186,7 +180,6 @@ class AR_Session_state extends State<AR_Session>
           //this.arSessionManager.onError("Adding Anchor failed");
         }
       }
-
     }
   }
 
@@ -205,5 +198,4 @@ class AR_Session_state extends State<AR_Session>
       appDocDir.deleteSync(recursive: true);
     }
   }
-
 }

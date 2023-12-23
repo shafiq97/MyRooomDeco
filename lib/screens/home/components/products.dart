@@ -41,7 +41,7 @@ class Products extends StatelessWidget {
               Expanded(
                 child: Text(
                   productModel.name,
-                  style: TextStyle(
+                  style: const TextStyle(
                     overflow: TextOverflow.ellipsis,
                     color: black,
                     fontSize: 14,
@@ -72,10 +72,10 @@ class Products extends StatelessWidget {
         child: Padding(
       padding: const EdgeInsets.symmetric(horizontal: appPadding),
       child: GridView.builder(
-          padding: EdgeInsets.only(bottom: appPadding * 2),
-          physics: BouncingScrollPhysics(),
+          padding: const EdgeInsets.only(bottom: appPadding * 2),
+          physics: const BouncingScrollPhysics(),
           shrinkWrap: true,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             childAspectRatio: 0.65,
           ),
