@@ -64,10 +64,10 @@ class _cartScreenState extends State<cartScreen> {
                             ClipRRect(
                                 borderRadius: BorderRadius.circular(10),
                                 child: Image.asset(
+                                  productModel.imageUrl,
                                   fit: BoxFit.cover,
                                   height: size.height * 0.20,
                                   width: size.width * 0.35,
-                                  productModel.imageUrl,
                                 )),
                             const SizedBox(
                               width: 2,
@@ -95,7 +95,7 @@ class _cartScreenState extends State<cartScreen> {
                                             add_notes_state.cart_list
                                                 .remove(productModel);
                                           });
-                                          widget.total-=productModel.price;
+                                          widget.total -= productModel.price;
                                         },
                                         child: const Text("REMOVE"))
                                   ],
@@ -304,7 +304,7 @@ class _cartScreenState extends State<cartScreen> {
                         ),
                         onPressed: () {
                           setState(() {
-                            widget.total -=800;
+                            widget.total -= 800;
                             _couponController.clear();
                           });
                         },

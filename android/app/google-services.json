@@ -1,36 +1,26 @@
 {
   "project_info": {
-    "project_number": "232728309104",
-    "project_id": "smarthome-b446e",
-    "storage_bucket": "smarthome-b446e.appspot.com"
+    "project_number": "223118316742",
+    "project_id": "ar-furniture-36676",
+    "storage_bucket": "ar-furniture-36676.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:232728309104:android:8cfa7ba6d529b4ef9c33b5",
+        "mobilesdk_app_id": "1:223118316742:android:578c17aa825776799273c7",
         "android_client_info": {
           "package_name": "com.example.gradutionprojec"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "232728309104-p62e7d33qv3r537e2ijvj6tri2ork4kq.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBpOt57DDDq1-5OQMtV7N3yNzGZe9qGD4s"
+          "current_key": "AIzaSyDIxPliR2eir9x3k7LCJ80GCRvF-iRWBHw"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "232728309104-p62e7d33qv3r537e2ijvj6tri2ork4kq.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }

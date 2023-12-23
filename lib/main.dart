@@ -9,7 +9,6 @@ import 'package:gradutionprojec/Login_screen.dart';
 
 import 'package:gradutionprojec/screens/home/home_screen.dart';
 import 'package:provider/provider.dart';
-
 import 'package:arkit_plugin/arkit_plugin.dart';
 
 import 'package:vector_math/vector_math_64.dart' as vector;
@@ -17,16 +16,8 @@ import 'package:vector_math/vector_math_64.dart' as vector;
 bool shouldUseFirestoreEmulator = false;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // await Firebase.initializeApp();
-  // if (FirebaseAuth.instance.currentUser != null) {
-  //   // User is already signed in
-  // }
-  // if (shouldUseFirestoreEmulator) {
-  //   // print("ahmed");
-  //   FirebaseFirestore.instance.useFirestoreEmulator('localhost', 8080);
-  // }
-
-  // FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
+  await Firebase.initializeApp();
+  FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
   runApp(MyApp());
 }
 

@@ -98,10 +98,10 @@ class FavoriteScreen extends StatelessWidget {
                           ClipRRect(
                               borderRadius: BorderRadius.circular(10),
                               child: Image.asset(
+                                productModel.imageUrl,
                                 fit: BoxFit.cover,
                                 height: size.height * 0.24,
                                 width: size.width * 0.45,
-                                productModel.imageUrl,
                               )),
                           const SizedBox(
                             height: 30,

@@ -102,10 +102,10 @@ class datasearch extends SearchDelegate {
                       ClipRRect(
                           borderRadius: BorderRadius.circular(10),
                           child: Image.asset(
+                            productList[i].imageUrl,
                             fit: BoxFit.cover,
                             height: size.height * 0.24,
                             width: 600,
-                            productList[i].imageUrl,
                           )),
                       SizedBox(
                         height: 5,
@@ -153,10 +153,10 @@ class datasearch extends SearchDelegate {
                       ClipRRect(
                           borderRadius: BorderRadius.circular(10),
                           child: Image.asset(
+                            filternames[i].imageUrl,
                             fit: BoxFit.cover,
                             height: size.height * 0.24,
                             width: 600,
-                            filternames[i].imageUrl,
                           )),
                       const SizedBox(
                         height: 5,

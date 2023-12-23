@@ -124,10 +124,10 @@ class _CartPageState extends State<CartPage> {
                       ClipRRect(
                           borderRadius: BorderRadius.circular(10),
                           child: Image.asset(
+                            item.image,
                             fit: BoxFit.cover,
                             height: size.height * 0.24,
                             width: size.width * 0.42,
-                            item.image,
                           )),
                       const SizedBox(
                         height: 30,
@@ -151,9 +151,9 @@ class _CartPageState extends State<CartPage> {
                                 padding:
                                     new EdgeInsets.symmetric(horizontal: 13),
                                 child: Text(
+                                  'by ${item.manufacture}',
                                   maxLines: 2,
                                   overflow: TextOverflow.ellipsis,
-                                  'by ${item.manufacture}',
                                   style: TextStyle(
                                     overflow: TextOverflow.ellipsis,
                                     color: Colors.black.withOpacity(0.5),

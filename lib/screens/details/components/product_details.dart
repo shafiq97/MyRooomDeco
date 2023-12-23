@@ -72,9 +72,9 @@ class add_notes_state extends State<add_notes> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
+                          productModel.name,
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
-                          productModel.name,
                           style: TextStyle(
                             color: black,
                             fontSize: 25,

@@ -6,7 +6,6 @@ import '../../../models/product_model.dart';
 import '../../details/details_screen.dart';
 
 class Products extends StatelessWidget {
-
   const Products({Key? key}) : super(key: key);
 
   Widget _buildProducts(BuildContext context, int index) {
@@ -14,7 +13,6 @@ class Products extends StatelessWidget {
     ProductModel productModel = productList[index];
 
     return GestureDetector(
-
       onTap: () {
         Navigator.push(
           context,
@@ -34,19 +32,14 @@ class Products extends StatelessWidget {
               ClipRRect(
                 borderRadius: BorderRadius.circular(10),
                 child: Image.asset(
-                    fit: BoxFit.cover,
-                    height: size.height * 0.24,
-                    width: size.width * 0.45,
-
-                      productModel.imageUrl,
-                    ),
+                  productModel.imageUrl,
+                  fit: BoxFit.cover,
+                  height: size.height * 0.24,
+                  width: size.width * 0.45,
+                ),
               ),
-
-
               Expanded(
-
                 child: Text(
-
                   productModel.name,
                   style: TextStyle(
                     overflow: TextOverflow.ellipsis,
@@ -55,10 +48,7 @@ class Products extends StatelessWidget {
                   ),
                 ),
               ),
-
-              
               Expanded(
-
                 child: Text(
                   'by ${productModel.manufacturer}',
                   style: TextStyle(
@@ -69,7 +59,6 @@ class Products extends StatelessWidget {
                   ),
                 ),
               ),
-
             ],
           ),
         ),
@@ -81,22 +70,22 @@ class Products extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: appPadding),
-          child: GridView.builder(
-              padding: EdgeInsets.only(bottom: appPadding * 2),
-              physics: BouncingScrollPhysics(),
-              shrinkWrap: true,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                childAspectRatio: 0.65,
-              ),
-              itemCount: productList.length,
-              itemBuilder: (context, index) {
-                return Transform.translate(
-                  offset: Offset(0.0, index.isOdd ? 30 : 0.0),
-                  child: _buildProducts(context, index),
-                );
-              }),
-        ));
+      padding: const EdgeInsets.symmetric(horizontal: appPadding),
+      child: GridView.builder(
+          padding: EdgeInsets.only(bottom: appPadding * 2),
+          physics: BouncingScrollPhysics(),
+          shrinkWrap: true,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            childAspectRatio: 0.65,
+          ),
+          itemCount: productList.length,
+          itemBuilder: (context, index) {
+            return Transform.translate(
+              offset: Offset(0.0, index.isOdd ? 30 : 0.0),
+              child: _buildProducts(context, index),
+            );
+          }),
+    ));
   }
 }

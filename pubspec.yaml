@@ -1,7 +1,6 @@
 name: gradutionprojec
 description: A new Flutter project.
 
-
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -19,7 +18,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.17.5 <3.0.0"
+  sdk: ">=2.12.1 <3.16.2"
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -28,28 +27,33 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+
+
   flutter:
     sdk: flutter
-  cloud_firestore:
 
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   arkit_plugin: ^1.0.5
-  email_validator: ^2.1.16
-  firebase_core:
-  firebase_auth:
-  firebase_core_platform_interface: ^5.0.0
-  get: ^4.6.6
-  url_launcher: ^6.2.2
+  ar_flutter_plugin: ^0.7.3
+  model_viewer_plus: ^1.7.0
+  flutter_cache_manager: ^3.3.0
+  dart_sentiment: ^0.0.9
+  flutter_tts: ^3.6.3
+  firebase_core: ^2.8.0
+  cloud_firestore: ^4.4.5
+  firebase_crashlytics: ^3.0.17
+  firebase_auth: ^4.3.0
+  email_validator: ^2.1.17
+  get: ^4.6.5
+  geolocator: ^9.0.2
+  url_launcher: ^6.1.10
+  provider: ^6.0.5
   readmore: ^2.2.0
-  google_fonts:
-  ar_flutter_plugin: ^0.7.1
-  firebase_storage: ^11.0.2
-  provider: ^6.1.1
-  firebase_crashlytics: ^3.4.8
-  vector_math: ^2.1.4
+
+
 
 dev_dependencies:
   flutter_test:
@@ -67,28 +71,54 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
-  plugin:
-    androidPackage: com.wikitude.wikitude_plugin
-    pluginClass: WikitudePlugin
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
   assets:
+
+    - assets/Home/
     - assets/s1/
+    - assets/se7a/
     - assets/s2/
     - assets/s3/
     - assets/s4/
+    - assets/s5/
     - assets/s6/
+    - assets/s7/
     - assets/s8/
     - assets/s9/
     - assets/s10/
     - assets/s11/
-    - assets/s5/
-    - assets/s7/
-    - assets/se7a/
-    # To add assets to your application, add an assets section, like this:
+    - assets/s12/
+    - assets/s13/
+    - assets/s14/
+    - assets/s15/
+    - assets/s16/
+    - assets/s17/
+    - assets/s18/
+    - assets/s19/
+    - assets/s20/
+    - assets/s21/
+    - assets/s22/
+    - assets/s23/
+    - assets/s24/
+    - assets/s26/
+    - assets/s27/
+    - assets/s28/
+    - assets/s29/
+    - assets/s30/
+    - assets/s31/
+    - assets/s32/
+    - assets/s33/
+    - assets/s34/
+    - assets/s35/
+    - assets/s36/
+    - assets/s37/
+    - assets/pin/
+
+  # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
