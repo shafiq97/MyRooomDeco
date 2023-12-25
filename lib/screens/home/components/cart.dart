@@ -113,12 +113,12 @@ class _cartScreenState extends State<cartScreen> {
                               ],
                             ),
                             const SizedBox(height: 150),
-                            Column(
-                              children: const [
+                            const Column(
+                              children: [
                                 SizedBox(height: 100),
                               ],
                             ),
-                            SizedBox(width: 2),
+                            const SizedBox(width: 2),
                             Padding(
                               padding:
                                   const EdgeInsets.only(right: 2.0, top: 70),
@@ -140,13 +140,13 @@ class _cartScreenState extends State<cartScreen> {
                                               widget.total -=
                                                   productModel.price;
                                             }),
-                                        child: Icon(
+                                        child: const Icon(
                                           Icons.remove,
                                           size: 20,
                                         )),
                                     Text(
                                       '${widget.counters[index]}',
-                                      style: TextStyle(fontSize: 30),
+                                      style: const TextStyle(fontSize: 30),
                                     ),
                                     GestureDetector(
                                         onTap: () {
@@ -156,7 +156,7 @@ class _cartScreenState extends State<cartScreen> {
                                             widget.total += productModel.price;
                                           });
                                         },
-                                        child: Icon(
+                                        child: const Icon(
                                           Icons.add,
                                           size: 20,
                                         )),
@@ -174,7 +174,7 @@ class _cartScreenState extends State<cartScreen> {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Colors.white,
 
                 /*border: Border(
@@ -362,23 +362,25 @@ class _cartScreenState extends State<cartScreen> {
   }
 
   Widget _buildPopupDialog(BuildContext context) {
-    return AlertDialog(
-      title: const Text('Transaction completed sucssefully'),
-      content: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: const <Widget>[
-          Text("Payment by cash on delviery "),
+    return SingleChildScrollView(
+      child: AlertDialog(
+        title: const Text('Transaction completed successfully'),
+        content: const Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Text("Payment by cash on delivery "),
+          ],
+        ),
+        actions: <Widget>[
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            child: const Text('Close', style: TextStyle(color: Colors.black)),
+          ),
         ],
       ),
-      actions: <Widget>[
-        TextButton(
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-          child: const Text('Close', style: TextStyle(color: Colors.black)),
-        ),
-      ],
     );
   }
 }

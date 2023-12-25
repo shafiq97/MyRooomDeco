@@ -677,355 +677,354 @@ final p11 = ProductModel(
     style: 'Modern',
     quantity: 1,
     ARurl: "assets/s11/chair.gltf");
-final p12 = ProductModel(
-    name: 'black gaming chair ',
-    quantity: 1,
-    manufacturer: 'Shafiq',
-    imageUrl: 'assets/s12/chair.png',
-    price: 5600,
-    color: 'Black',
-    description:
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-    madeIn: 'Russia',
-    rating: 5,
-    style: 'Modern',
-    ARurl: "assets/s12/chair.gltf");
-final p13 = ProductModel(
-    name: 'red office chair ',
-    manufacturer: 'Shafiq',
-    imageUrl: 'assets/s13/chair.png',
-    quantity: 1,
-    price: 1230,
-    color: 'Red',
-    description:
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-    madeIn: 'Russia',
-    rating: 5,
-    style: 'Modern',
-    ARurl: "assets/s13/chair.gltf");
-final p14 = ProductModel(
-    name: 'black office chair ',
-    manufacturer: 'Shafiq',
-    imageUrl: 'assets/s14/chair.png',
-    price: 3025,
-    color: 'Black',
-    description:
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-    madeIn: 'Russia',
-    quantity: 1,
-    rating: 5,
-    style: 'Modern',
-    ARurl: "assets/s14/chair.gltf");
-final p15 = ProductModel(
-    name: 'white home sofa',
-    manufacturer: 'Shafiq',
-    imageUrl: 'assets/s15/sofa.png',
-    price: 4500,
-    color: 'White',
-    description:
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-    madeIn: 'Russia',
-    rating: 5,
-    quantity: 1,
-    style: 'Modern',
-    ARurl: "assets/s15/sofa.gltf");
-final p16 = ProductModel(
-    name: 'sofa chair ',
-    manufacturer: 'Shafiq',
-    imageUrl: 'assets/s16/sofa_chair.png',
-    quantity: 1,
-    price: 1010,
-    color: 'Black',
-    description:
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-    madeIn: 'Russia',
-    rating: 5,
-    style: 'Modern',
-    ARurl: "assets/s16/sofa_chair.gltf");
-final p17 = ProductModel(
-    name: 'green sofa chair ',
-    manufacturer: 'Shafiq',
-    imageUrl: 'assets/s17/sofa_chair.png',
-    quantity: 1,
-    price: 1200,
-    color: 'Green',
-    description:
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-    madeIn: 'Russia',
-    rating: 5,
-    style: 'Modern',
-    ARurl: "assets/s17/sofa_chair.gltf");
-final p18 = ProductModel(
-    name: 'home sofa ',
-    manufacturer: 'Shafiq',
-    imageUrl: 'assets/s18/sofa.png',
-    quantity: 1,
-    price: 5400,
-    color: 'White',
-    description:
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-    madeIn: 'Russia',
-    rating: 5,
-    style: 'Modern',
-    ARurl: "assets/s18/sofa.gltf");
-final p19 = ProductModel(
-    name: 'home sofa ',
-    manufacturer: 'Shafiq',
-    imageUrl: 'assets/s19/sofa.png',
-    price: 3025,
-    quantity: 1,
-    color: 'White',
-    description:
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-    madeIn: 'Russia',
-    rating: 5,
-    style: 'Modern',
-    ARurl: "assets/s19/sofa.gltf");
-final p20 = ProductModel(
-    name: 'wardrobe',
-    manufacturer: 'Shafiq',
-    imageUrl: 'assets/s20/wardrobe.png',
-    price: 9030,
-    quantity: 1,
-    color: 'White',
-    description:
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-    madeIn: 'Russia',
-    rating: 5,
-    style: 'Modern',
-    ARurl: "assets/s20/wardrobe.gltf");
-final p21 = ProductModel(
-    name: 'dining table with chairs',
-    manufacturer: 'Shafiq',
-    imageUrl: 'assets/s21/dining_table_and_chairs.png',
-    price: 6530,
-    quantity: 1,
-    color: 'Black',
-    description:
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-    madeIn: 'Russia',
-    rating: 5,
-    style: 'Modern',
-    ARurl: "assets/s21/dining_table_and_chairs.gltf");
-final p22 = ProductModel(
-    name: 'home chair  ',
-    quantity: 1,
-    manufacturer: 'Shafiq',
-    imageUrl: 'assets/s22/chair.png',
-    price: 3025,
-    color: 'White',
-    description:
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-    madeIn: 'Russia',
-    rating: 5,
-    style: 'Modern',
-    ARurl: "assets/s22/chair.gltf");
-final p23 = ProductModel(
-    name: 'wooden dinner table  ',
-    quantity: 1,
-    manufacturer: 'Shafiq',
-    imageUrl: 'assets/s23/wooden_dinner_table.png',
-    price: 1200,
-    color: 'White',
-    description:
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-    madeIn: 'Russia',
-    rating: 5,
-    style: 'Modern',
-    ARurl: "assets/s23/wooden_dinner_table.gltf");
-final p24 = ProductModel(
-    name: 'mid table  ',
-    manufacturer: 'Shafiq',
-    quantity: 1,
-    imageUrl: 'assets/s24/mid_table.png',
-    price: 320,
-    color: 'Black',
-    description:
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-    madeIn: 'Russia',
-    rating: 5,
-    style: 'Modern',
-    ARurl: "assets/s24/mid_table.gltf");
-final p26 = ProductModel(
-    name: 'table  ',
-    quantity: 1,
-    manufacturer: 'Shafiq',
-    imageUrl: 'assets/s26/wooden_table_grass.png',
-    price: 3025,
-    color: 'White',
-    description:
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-    madeIn: 'Russia',
-    rating: 5,
-    style: 'Modern',
-    ARurl: "assets/s26/wooden_table_grass.gltf");
-final p27 = ProductModel(
-    name: 'drawer  ',
-    manufacturer: 'Shafiq',
-    quantity: 1,
-    imageUrl: 'assets/s27/drawer.png',
-    price: 560,
-    color: 'White',
-    description:
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-    madeIn: 'Russia',
-    rating: 5,
-    style: 'Modern',
-    ARurl: "assets/s27/drawer.gltf");
-final p28 = ProductModel(
-    name: 'floor table  ',
-    manufacturer: 'Shafiq',
-    quantity: 1,
-    imageUrl: 'assets/s28/small_table.png',
-    price: 200,
-    color: 'Black Wooden',
-    description:
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-    madeIn: 'Russia',
-    rating: 5,
-    style: 'Modern',
-    ARurl: "assets/s28/small_table.gltf");
-final p29 = ProductModel(
-    name: 'american chair  ',
-    manufacturer: 'Shafiq',
-    imageUrl: 'assets/s29/american_chair.png',
-    price: 770,
-    quantity: 1,
-    color: 'White',
-    description:
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-    madeIn: 'Russia',
-    rating: 5,
-    style: 'Modern',
-    ARurl: "assets/s29/american_chair.gltf");
+// final p12 = ProductModel(
+//     name: 'black gaming chair ',
+//     quantity: 1,
+//     manufacturer: 'Shafiq',
+//     imageUrl: 'assets/s12/chair.png',
+//     price: 5600,
+//     color: 'Black',
+//     description:
+//         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
+//     madeIn: 'Russia',
+//     rating: 5,
+//     style: 'Modern',
+//     ARurl: "assets/s12/chair.gltf");
+// final p13 = ProductModel(
+//     name: 'red office chair ',
+//     manufacturer: 'Shafiq',
+//     imageUrl: 'assets/s13/chair.png',
+//     quantity: 1,
+//     price: 1230,
+//     color: 'Red',
+//     description:
+//         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
+//     madeIn: 'Russia',
+//     rating: 5,
+//     style: 'Modern',
+//     ARurl: "assets/s13/chair.gltf");
+// final p14 = ProductModel(
+//     name: 'black office chair ',
+//     manufacturer: 'Shafiq',
+//     imageUrl: 'assets/s14/chair.png',
+//     price: 3025,
+//     color: 'Black',
+//     description:
+//         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
+//     madeIn: 'Russia',
+//     quantity: 1,
+//     rating: 5,
+//     style: 'Modern',
+//     ARurl: "assets/s14/chair.gltf");
+// final p15 = ProductModel(
+//     name: 'white home sofa',
+//     manufacturer: 'Shafiq',
+//     imageUrl: 'assets/s15/sofa.png',
+//     price: 4500,
+//     color: 'White',
+//     description:
+//         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
+//     madeIn: 'Russia',
+//     rating: 5,
+//     quantity: 1,
+//     style: 'Modern',
+//     ARurl: "assets/s15/sofa.gltf");
+// final p16 = ProductModel(
+//     name: 'sofa chair ',
+//     manufacturer: 'Shafiq',
+//     imageUrl: 'assets/s16/sofa_chair.png',
+//     quantity: 1,
+//     price: 1010,
+//     color: 'Black',
+//     description:
+//         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
+//     madeIn: 'Russia',
+//     rating: 5,
+//     style: 'Modern',
+//     ARurl: "assets/s16/sofa_chair.gltf");
+// final p17 = ProductModel(
+//     name: 'green sofa chair ',
+//     manufacturer: 'Shafiq',
+//     imageUrl: 'assets/s17/sofa_chair.png',
+//     quantity: 1,
+//     price: 1200,
+//     color: 'Green',
+//     description:
+//         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
+//     madeIn: 'Russia',
+//     rating: 5,
+//     style: 'Modern',
+//     ARurl: "assets/s17/sofa_chair.gltf");
+// final p18 = ProductModel(
+//     name: 'home sofa ',
+//     manufacturer: 'Shafiq',
+//     imageUrl: 'assets/s18/sofa.png',
+//     quantity: 1,
+//     price: 5400,
+//     color: 'White',
+//     description:
+//         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
+//     madeIn: 'Russia',
+//     rating: 5,
+//     style: 'Modern',
+//     ARurl: "assets/s18/sofa.gltf");
+// final p19 = ProductModel(
+//     name: 'home sofa ',
+//     manufacturer: 'Shafiq',
+//     imageUrl: 'assets/s19/sofa.png',
+//     price: 3025,
+//     quantity: 1,
+//     color: 'White',
+//     description:
+//         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
+//     madeIn: 'Russia',
+//     rating: 5,
+//     style: 'Modern',
+//     ARurl: "assets/s19/sofa.gltf");
+// final p20 = ProductModel(
+//     name: 'wardrobe',
+//     manufacturer: 'Shafiq',
+//     imageUrl: 'assets/s20/wardrobe.png',
+//     price: 9030,
+//     quantity: 1,
+//     color: 'White',
+//     description:
+//         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
+//     madeIn: 'Russia',
+//     rating: 5,
+//     style: 'Modern',
+//     ARurl: "assets/s20/wardrobe.gltf");
+// final p21 = ProductModel(
+//     name: 'dining table with chairs',
+//     manufacturer: 'Shafiq',
+//     imageUrl: 'assets/s21/dining_table_and_chairs.png',
+//     price: 6530,
+//     quantity: 1,
+//     color: 'Black',
+//     description:
+//         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
+//     madeIn: 'Russia',
+//     rating: 5,
+//     style: 'Modern',
+//     ARurl: "assets/s21/dining_table_and_chairs.gltf");
+// final p22 = ProductModel(
+//     name: 'home chair  ',
+//     quantity: 1,
+//     manufacturer: 'Shafiq',
+//     imageUrl: 'assets/s22/chair.png',
+//     price: 3025,
+//     color: 'White',
+//     description:
+//         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
+//     madeIn: 'Russia',
+//     rating: 5,
+//     style: 'Modern',
+//     ARurl: "assets/s22/chair.gltf");
+// final p23 = ProductModel(
+//     name: 'wooden dinner table  ',
+//     quantity: 1,
+//     manufacturer: 'Shafiq',
+//     imageUrl: 'assets/s23/wooden_dinner_table.png',
+//     price: 1200,
+//     color: 'White',
+//     description:
+//         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
+//     madeIn: 'Russia',
+//     rating: 5,
+//     style: 'Modern',
+//     ARurl: "assets/s23/wooden_dinner_table.gltf");
+// final p24 = ProductModel(
+//     name: 'mid table  ',
+//     manufacturer: 'Shafiq',
+//     quantity: 1,
+//     imageUrl: 'assets/s24/mid_table.png',
+//     price: 320,
+//     color: 'Black',
+//     description:
+//         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
+//     madeIn: 'Russia',
+//     rating: 5,
+//     style: 'Modern',
+//     ARurl: "assets/s24/mid_table.gltf");
+// final p26 = ProductModel(
+//     name: 'table  ',
+//     quantity: 1,
+//     manufacturer: 'Shafiq',
+//     imageUrl: 'assets/s26/wooden_table_grass.png',
+//     price: 3025,
+//     color: 'White',
+//     description:
+//         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
+//     madeIn: 'Russia',
+//     rating: 5,
+//     style: 'Modern',
+//     ARurl: "assets/s26/wooden_table_grass.gltf");
+// final p27 = ProductModel(
+//     name: 'drawer  ',
+//     manufacturer: 'Shafiq',
+//     quantity: 1,
+//     imageUrl: 'assets/s27/drawer.png',
+//     price: 560,
+//     color: 'White',
+//     description:
+//         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
+//     madeIn: 'Russia',
+//     rating: 5,
+//     style: 'Modern',
+//     ARurl: "assets/s27/drawer.gltf");
+// final p28 = ProductModel(
+//     name: 'floor table  ',
+//     manufacturer: 'Shafiq',
+//     quantity: 1,
+//     imageUrl: 'assets/s28/small_table.png',
+//     price: 200,
+//     color: 'Black Wooden',
+//     description:
+//         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
+//     madeIn: 'Russia',
+//     rating: 5,
+//     style: 'Modern',
+//     ARurl: "assets/s28/small_table.gltf");
+// final p29 = ProductModel(
+//     name: 'american chair  ',
+//     manufacturer: 'Shafiq',
+//     imageUrl: 'assets/s29/american_chair.png',
+//     price: 770,
+//     quantity: 1,
+//     color: 'White',
+//     description:
+//         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
+//     madeIn: 'Russia',
+//     rating: 5,
+//     style: 'Modern',
+//     ARurl: "assets/s29/american_chair.gltf");
 
-final p31 = ProductModel(
-    name: ' shelf ',
-    manufacturer: 'Shafiq',
-    imageUrl: 'assets/s31/shelf.png',
-    price: 2323,
-    color: 'Wooden Yellow',
-    quantity: 1,
-    description:
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-    madeIn: 'Russia',
-    rating: 5,
-    style: 'Modern',
-    ARurl: "assets/s31/shelf.gltf");
-final p32 = ProductModel(
-    name: ' two chairs with table  ',
-    manufacturer: 'Shafiq',
-    imageUrl: 'assets/s32/2_chairs.png',
-    price: 3025,
-    quantity: 1,
-    color: 'White',
-    description:
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-    madeIn: 'Russia',
-    rating: 5,
-    style: 'Modern',
-    ARurl: "assets/s32/2_chairs.gltf");
-final p33 = ProductModel(
-    name: ' drawer  ',
-    manufacturer: 'Shafiq',
-    imageUrl: 'assets/s33/drawer.png',
-    quantity: 1,
-    price: 3025,
-    color: 'White',
-    description:
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-    madeIn: 'Russia',
-    rating: 5,
-    style: 'Modern',
-    ARurl: "assets/s33/drawer.gltf");
-final p34 = ProductModel(
-    name: ' white chair  ',
-    manufacturer: 'Shafiq',
-    imageUrl: 'assets/s34/normal_chair.png',
-    price: 300,
-    quantity: 1,
-    color: 'White',
-    description:
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-    madeIn: 'Russia',
-    rating: 5,
-    style: 'Modern',
-    ARurl: "assets/s34/normal_chair.gltf");
-final p35 = ProductModel(
-    name: ' two seats sofa ',
-    manufacturer: 'Shafiq',
-    imageUrl: 'assets/s35/normal_2_chairs.png',
-    price: 820,
-    color: 'White',
-    quantity: 1,
-    description:
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-    madeIn: 'Russia',
-    rating: 5,
-    style: 'Modern',
-    ARurl: "assets/s35/normal_2_chairs.gltf");
-final p36 = ProductModel(
-    name: 'dining table ',
-    manufacturer: 'Shafiq',
-    imageUrl: 'assets/s36/dining_table.png',
-    price: 4000,
-    quantity: 1,
-    color: 'Black and White',
-    description:
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-    madeIn: 'Russia',
-    rating: 5,
-    style: 'Modern',
-    ARurl: "assets/s36/dining_table.gltf");
-final p37 = ProductModel(
-    name: 'three seats sofa ',
-    manufacturer: 'Shafiq',
-    imageUrl: 'assets/s37/sofa.png',
-    price: 1720,
-    quantity: 1,
-    color: 'White',
-    description:
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-    madeIn: 'Russia',
-    rating: 5,
-    style: 'Modern',
-    ARurl: "assets/s37/sofa.gltf");
+// final p31 = ProductModel(
+//     name: ' shelf ',
+//     manufacturer: 'Shafiq',
+//     imageUrl: 'assets/s31/shelf.png',
+//     price: 2323,
+//     color: 'Wooden Yellow',
+//     quantity: 1,
+//     description:
+//         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
+//     madeIn: 'Russia',
+//     rating: 5,
+//     style: 'Modern',
+//     ARurl: "assets/s31/shelf.gltf");
+// final p32 = ProductModel(
+//     name: ' two chairs with table  ',
+//     manufacturer: 'Shafiq',
+//     imageUrl: 'assets/s32/2_chairs.png',
+//     price: 3025,
+//     quantity: 1,
+//     color: 'White',
+//     description:
+//         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
+//     madeIn: 'Russia',
+//     rating: 5,
+//     style: 'Modern',
+//     ARurl: "assets/s32/2_chairs.gltf");
+// final p33 = ProductModel(
+//     name: ' drawer  ',
+//     manufacturer: 'Shafiq',
+//     imageUrl: 'assets/s33/drawer.png',
+//     quantity: 1,
+//     price: 3025,
+//     color: 'White',
+//     description:
+//         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
+//     madeIn: 'Russia',
+//     rating: 5,
+//     style: 'Modern',
+//     ARurl: "assets/s33/drawer.gltf");
+// final p34 = ProductModel(
+//     name: ' white chair  ',
+//     manufacturer: 'Shafiq',
+//     imageUrl: 'assets/s34/normal_chair.png',
+//     price: 300,
+//     quantity: 1,
+//     color: 'White',
+//     description:
+//         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
+//     madeIn: 'Russia',
+//     rating: 5,
+//     style: 'Modern',
+//     ARurl: "assets/s34/normal_chair.gltf");
+// final p35 = ProductModel(
+//     name: ' two seats sofa ',
+//     manufacturer: 'Shafiq',
+//     imageUrl: 'assets/s35/normal_2_chairs.png',
+//     price: 820,
+//     color: 'White',
+//     quantity: 1,
+//     description:
+//         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
+//     madeIn: 'Russia',
+//     rating: 5,
+//     style: 'Modern',
+//     ARurl: "assets/s35/normal_2_chairs.gltf");
+// final p36 = ProductModel(
+//     name: 'dining table ',
+//     manufacturer: 'Shafiq',
+//     imageUrl: 'assets/s36/dining_table.png',
+//     price: 4000,
+//     quantity: 1,
+//     color: 'Black and White',
+//     description:
+//         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
+//     madeIn: 'Russia',
+//     rating: 5,
+//     style: 'Modern',
+//     ARurl: "assets/s36/dining_table.gltf");
+// final p37 = ProductModel(
+//     name: 'three seats sofa ',
+//     manufacturer: 'Shafiq',
+//     imageUrl: 'assets/s37/sofa.png',
+//     price: 1720,
+//     quantity: 1,
+//     color: 'White',
+//     description:
+//         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
+//     madeIn: 'Russia',
+//     rating: 5,
+//     style: 'Modern',
+//     ARurl: "assets/s37/sofa.gltf");
 
 final List<ProductModel> productList = [
   p1,
   p5,
   p6,
   p7,
-  p19,
   p3,
   p4,
   p8,
   p9,
   p10,
   p11,
-  p12,
-  p13,
-  p14,
-  p15,
-  p16,
-  p17,
-  p18,
-  p20,
-  p21,
-  p22,
-  p23,
-  p24,
-  p28,
-  p27,
-  p26,
-  p29,
-  p31,
-  p32,
-  p33,
-  p34,
-  p35,
-  p36,
-  p37
+  // p12,
+  // p13,
+  // p14,
+  // p15,
+  // p16,
+  // p17,
+  // p18,
+  // p20,
+  // p21,
+  // p22,
+  // p23,
+  // p24,
+  // p28,
+  // p27,
+  // p26,
+  // p29,
+  // p31,
+  // p32,
+  // p33,
+  // p34,
+  // p35,
+  // p36,
+  // p37
 /*  _product4,//1
   _product2,//2
   _product3,//3

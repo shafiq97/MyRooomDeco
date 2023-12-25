@@ -1,3 +1,4 @@
+import 'package:gradutionprojec/Admin/admin_login.dart';
 import 'package:gradutionprojec/screens/home/home_screen.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -82,7 +83,6 @@ class _LoginScreenState extends State<LoginScreen> {
                           const SizedBox(
                             height: 35,
                           ),
-
                           defaultTextFormField(
                             hintText: 'Password',
                             fieldonChange: (value) {
@@ -106,7 +106,6 @@ class _LoginScreenState extends State<LoginScreen> {
                               }
                             },
                           ),
-
                           const SizedBox(
                             height: 40,
                           ),
@@ -114,7 +113,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             alignment: Alignment.centerLeft,
                             child: Visibility(
                               visible: isEmailorPasswordWrong,
-                              child: Text(
+                              child: const Text(
                                 'Either Email or Password are wrong',
                                 style: TextStyle(color: Colors.red),
                               ),
@@ -154,28 +153,22 @@ class _LoginScreenState extends State<LoginScreen> {
                                   final validForm =
                                       formKey.currentState!.validate();
                                   if (validForm) {
-                                    print(email.text.toString());
-                                    print(password.text.toString());
                                     final User =
                                         await auth.signInWithEmailAndPassword(
                                             email: email.text,
                                             password: password.text);
                                     //  print(email.text.toString());
-                                    print("logged successfuly");
                                     name = email.text.toString();
-                                    print(name);
                                     // Reviewes(email.text.toString());
                                     isEmailorPasswordWrong = false;
                                     setState(() {});
-                                    if (User != null) {
-                                      FirebaseAuth.instance
-                                          .setPersistence(Persistence.LOCAL);
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  HomeScreen()));
-                                    }
+                                    FirebaseAuth.instance
+                                        .setPersistence(Persistence.LOCAL);
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                HomeScreen()));
                                   }
                                 } catch (e) {
                                   print(e);
@@ -219,13 +212,21 @@ class _LoginScreenState extends State<LoginScreen> {
                                   )),
                             ],
                           ),
-                          // TextButton(onPressed: () {
-                          //   Navigator.push(context, MaterialPageRoute(
-                          //       builder: (context) =>AdminSignIScreen()));
-                          // },
-                          //     child: const Text('Login as an Admin ', style: TextStyle(
-                          //       fontSize: 20,
-                          //       color: Colors.orangeAccent,),)),
+                          // TextButton(
+                          //     onPressed: () {
+                          //       Navigator.push(
+                          //           context,
+                          //           MaterialPageRoute(
+                          //               builder: (context) =>
+                          //                   const AdminSignIScreen()));
+                          //     },
+                          //     child: const Text(
+                          //       'Login as an Admin ',
+                          //       style: TextStyle(
+                          //         fontSize: 20,
+                          //         color: Colors.orangeAccent,
+                          //       ),
+                          //     )),
                         ],
                       ),
                     ),

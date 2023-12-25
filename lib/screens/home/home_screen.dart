@@ -136,7 +136,7 @@ class NavigationDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: const Icon(Icons.compare_arrows),
-            title: const Text('Area mesurement'),
+            title: const Text('Area measurement'),
             onTap: () {
               Navigator.push(
                 context,

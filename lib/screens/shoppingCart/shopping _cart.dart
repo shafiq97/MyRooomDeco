@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../home/components/products.dart';
@@ -11,40 +10,34 @@ class shoppingCart extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: ListTile(
-        title: Text("Total Amount"),
-        subtitle: Text("\$ 170.00"),
+        title: const Text("Total Amount"),
+        subtitle: const Text("\$ 170.00"),
         trailing: Container(
           width: 160,
-           decoration: BoxDecoration(
-             color: Colors.grey,
-             borderRadius: BorderRadius.circular(30),
-           ),
-
+          decoration: BoxDecoration(
+            color: Colors.grey,
+            borderRadius: BorderRadius.circular(30),
+          ),
           child: MaterialButton(
-            onPressed: (){},
-
-            child: Text(
-              'Submit'
-            ),
+            onPressed: () {},
+            child: const Text('Submit'),
           ),
         ),
-
-
-
       ),
-appBar: AppBar(
-  title: Text("Shopping Cart"
-  ),
-),
-      body:  ListView(
-        children: [
-          SizedBox(height: 10,),
+      appBar: AppBar(
+        title: const Text("Shopping Cart"),
+      ),
+      body: ListView(
+        children: const [
+          SizedBox(
+            height: 20,
+          ),
           shoppingCartItem(),
-          SizedBox(height: 10,),
-
+          SizedBox(
+            height: 20,
+          ),
         ],
       ),
-
     );
   }
 }

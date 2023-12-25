@@ -70,8 +70,6 @@ class _OrdersState extends State<Orders> {
     setState(() {
       orders = items;
     });
-    print(orders[0].orderDetails[1]);
-    print(orders[0].orderDetails[0]);
   }
 
   @override
@@ -192,7 +190,7 @@ class _OrdersState extends State<Orders> {
                                         ),
                                       ),
                                       const Text(
-                                        'MYR',
+                                        ' MYR',
                                         style: TextStyle(
                                             color: Colors.orangeAccent,
                                             fontWeight: FontWeight.w900,

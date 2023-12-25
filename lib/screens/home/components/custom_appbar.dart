@@ -13,11 +13,11 @@ class CustomAppBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Icon(
+          const Icon(
             Icons.arrow_circle_right,
             size: 25,
           ),
-          Text(
+          const Text(
             'Explore',
             style: TextStyle(
               fontWeight: FontWeight.bold,
@@ -33,7 +33,7 @@ class CustomAppBar extends StatelessWidget {
                 ),
               );
             },
-            icon: Icon(Icons.favorite),
+            icon: const Icon(Icons.favorite),
             iconSize: 25,
           )
         ],

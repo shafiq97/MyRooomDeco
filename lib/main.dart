@@ -31,10 +31,10 @@ class MyApp extends StatelessWidget {
       },
       child: MaterialApp(
           title: 'Smart Home',
-          debugShowCheckedModeBanner: false, 
+          debugShowCheckedModeBanner: false,
           theme: ThemeData(
             primarySwatch: Colors.blue,
-          ), 
+          ),
           home: FirebaseAuth.instance.currentUser != null
               ? HomeScreen()
               : LoginScreen()),
@@ -82,17 +82,15 @@ class _CameraDistancePageState extends State<CameraDistancePage> {
     this.arkitController?.onARTap = (ar) {
       final point =
           ar.firstWhere((o) => o.type == ARKitHitTestResultType.featurePoint);
-      if (point != null) {
-        final position = vector.Vector3(
-          point.worldTransform.getColumn(3).x,
-          point.worldTransform.getColumn(3).y,
-          point.worldTransform.getColumn(3).z,
-        );
-        setState(() {
-          distance =
-              _calculateDistanceBetweenPoints(vector.Vector3.zero(), position);
-        });
-      }
+      final position = vector.Vector3(
+        point.worldTransform.getColumn(3).x,
+        point.worldTransform.getColumn(3).y,
+        point.worldTransform.getColumn(3).z,
+      );
+      setState(() {
+        distance =
+            _calculateDistanceBetweenPoints(vector.Vector3.zero(), position);
+      });
     };
   }
 

@@ -29,7 +29,7 @@ class add_notes_state extends State<add_notes> {
     this.productModel = productModell;
   }
   String uid = FirebaseAuth.instance.currentUser!.uid;
-  ProductModel productModel = new ProductModel(
+  ProductModel productModel = ProductModel(
       name: "name",
       imageUrl: "imageUrl",
       price: 1,
@@ -75,7 +75,7 @@ class add_notes_state extends State<add_notes> {
                           productModel.name,
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
+                          style: const TextStyle(
                             color: black,
                             fontSize: 25,
                             fontWeight: FontWeight.bold,
@@ -92,7 +92,7 @@ class add_notes_state extends State<add_notes> {
                       ],
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 3,
                   ),
                   Container(
@@ -104,11 +104,12 @@ class add_notes_state extends State<add_notes> {
                     child: Center(
                       child: IconButton(
                         icon: (cartPressed == false)
-                            ? Icon(
+                            ? const Icon(
                                 Icons.add_shopping_cart,
                                 color: Colors.white,
                               )
-                            : Icon(Icons.shopping_cart, color: Colors.blue),
+                            : const Icon(Icons.shopping_cart,
+                                color: Colors.blue),
                         iconSize: 30,
                         onPressed: () async {
                           if (productModel.incart == false) {
@@ -168,8 +169,8 @@ class add_notes_state extends State<add_notes> {
                   Padding(
                     padding: const EdgeInsets.all(5.0),
                     child: Text(
-                      '\$${productModel.price}',
-                      style: TextStyle(
+                      'RM ${productModel.price}',
+                      style: const TextStyle(
                         fontWeight: FontWeight.w800,
                         fontSize: 17,
                         letterSpacing: -0.6,
@@ -179,21 +180,21 @@ class add_notes_state extends State<add_notes> {
                   )
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
               Row(
                 children: [
                   Text(
                     '${productModel.rating}',
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   StarRating(rating: productModel.rating),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Row(
@@ -211,7 +212,7 @@ class add_notes_state extends State<add_notes> {
                       ),
                       Text(
                         productModel.color,
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: black,
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
@@ -231,7 +232,7 @@ class add_notes_state extends State<add_notes> {
                       ),
                       Text(
                         productModel.style,
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: black,
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
@@ -251,7 +252,7 @@ class add_notes_state extends State<add_notes> {
                       ),
                       Text(
                         productModel.madeIn,
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: black,
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
@@ -261,17 +262,17 @@ class add_notes_state extends State<add_notes> {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Text(
                 productModel.description,
-                style: TextStyle(
+                style: const TextStyle(
                   color: black,
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Row(
@@ -287,9 +288,9 @@ class add_notes_state extends State<add_notes> {
                       ),
                       child: Center(
                         child: FloatingActionButton.extended(
-                          label: Text('View in AR'),
+                          label: const Text('View in AR'),
                           backgroundColor: Colors.black,
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.view_in_ar,
                             size: 30,
                           ),
@@ -315,11 +316,11 @@ class add_notes_state extends State<add_notes> {
                     child: Center(
                       child: IconButton(
                         icon: (ispressed == false)
-                            ? Icon(
+                            ? const Icon(
                                 Icons.favorite_border_rounded,
                                 color: Colors.white,
                               )
-                            : Icon(Icons.favorite, color: Colors.red),
+                            : const Icon(Icons.favorite, color: Colors.red),
                         iconSize: 30,
                         onPressed: () async {
                           if (productModel.isFave == false) {

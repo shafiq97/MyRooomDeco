@@ -113,8 +113,8 @@ class _CartPageState extends State<CartPage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
-              height: size.height * 0.7,
+            SizedBox(
+              height: size.height * 0.65,
               child: ListView.builder(
                 itemCount: cartItems.length,
                 itemBuilder: (BuildContext context, int index) {
@@ -125,7 +125,7 @@ class _CartPageState extends State<CartPage> {
                     color: Colors.white,
                     child: Padding(
                       padding: const EdgeInsets.symmetric(
-                          vertical: 5, horizontal: 10),
+                          vertical: 5, horizontal: 40),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -174,7 +174,7 @@ class _CartPageState extends State<CartPage> {
                                 ),
                                 Row(
                                   children: [
-                                    Container(
+                                    SizedBox(
                                       width: 20,
                                       height: 20,
                                       child: FloatingActionButton.small(
@@ -202,8 +202,6 @@ class _CartPageState extends State<CartPage> {
                                           Query<Map<String, dynamic>> query =
                                               productsRef.where('modelname',
                                                   isEqualTo: item.name);
-                                          print("cart item" + item.name);
-                                          print(quantity);
                                           QuerySnapshot<Map<String, dynamic>>
                                               querySnapshot = await query.get();
                                           querySnapshot.docs
@@ -228,7 +226,7 @@ class _CartPageState extends State<CartPage> {
                                             fontWeight: FontWeight.w900),
                                       ),
                                     ),
-                                    Container(
+                                    SizedBox(
                                       width: 20,
                                       height: 20,
                                       child: FloatingActionButton.small(
@@ -260,7 +258,7 @@ class _CartPageState extends State<CartPage> {
                                                   query = productsRef.where(
                                                       'modelname',
                                                       isEqualTo: item.name);
-                                              print("cart item" + item.name);
+                                              print("cart item${item.name}");
                                               print(quantity);
                                               QuerySnapshot<
                                                       Map<String, dynamic>>
@@ -281,18 +279,18 @@ class _CartPageState extends State<CartPage> {
                                 ),
                                 Row(
                                   children: [
-                                    Container(
+                                    SizedBox(
+                                      width: 80,
+                                      height: 30,
                                       child: Text(
-                                        ' ${item.price} EG',
+                                        'RM ${item.price}',
                                         style: const TextStyle(
                                           overflow: TextOverflow.ellipsis,
                                           color: Colors.black54,
-                                          fontSize: 20,
+                                          fontSize: 15,
                                           fontWeight: FontWeight.w900,
                                         ),
                                       ),
-                                      width: 80,
-                                      height: 20,
                                     ),
                                     // SizedBox(width: size.width*0.01,),
 
@@ -320,7 +318,7 @@ class _CartPageState extends State<CartPage> {
                                                   query = productsRef.where(
                                                       'modelname',
                                                       isEqualTo: item.name);
-                                              print("cart item" + item.name);
+                                              print("cart item${item.name}");
                                               QuerySnapshot<
                                                       Map<String, dynamic>>
                                                   querySnapshot =
@@ -368,7 +366,7 @@ class _CartPageState extends State<CartPage> {
                       height: size.height * 0.035,
                     ),
                     Text(
-                      'Total Amount :  ' + total().toString() + '\MYR',
+                      'Total RM : ${total()}',
                       style: const TextStyle(
                         fontSize: 25,
                         fontWeight: FontWeight.w900,
@@ -421,106 +419,108 @@ class _CartPageState extends State<CartPage> {
   }
 
   Widget _buildPopupDialog(BuildContext context) {
-    return AlertDialog(
-      title: const Text('Transaction completed sucssefully'),
-      content: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          const Text("Payment by cash on delviery "),
-          TextField(
-            controller: name,
-            decoration: const InputDecoration(
-              hintText: 'Name',
+    return SingleChildScrollView(
+      child: AlertDialog(
+        title: const Text('Transaction completed sucssefully'),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            const Text("Payment by cash on delivery "),
+            TextField(
+              controller: name,
+              decoration: const InputDecoration(
+                hintText: 'Name',
+              ),
             ),
-          ),
-          const SizedBox(
-            height: 5,
-          ),
-          TextField(
-            controller: email,
-            decoration: const InputDecoration(
-              hintText: 'Email',
+            const SizedBox(
+              height: 5,
             ),
-          ),
-          const SizedBox(
-            height: 5,
-          ),
-          TextField(
-            controller: addresse,
-            decoration: const InputDecoration(
-              hintText: 'Address',
+            TextField(
+              controller: email,
+              decoration: const InputDecoration(
+                hintText: 'Email',
+              ),
             ),
-          ),
-          const SizedBox(
-            height: 5,
-          ),
-          TextField(
-            controller: PhoneNumber,
-            decoration: const InputDecoration(
-              hintText: 'Phone',
+            const SizedBox(
+              height: 5,
             ),
+            TextField(
+              controller: addresse,
+              decoration: const InputDecoration(
+                hintText: 'Address',
+              ),
+            ),
+            const SizedBox(
+              height: 5,
+            ),
+            TextField(
+              controller: PhoneNumber,
+              decoration: const InputDecoration(
+                hintText: 'Phone',
+              ),
+            ),
+          ],
+        ),
+        actions: <Widget>[
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            child: const Text('Close', style: TextStyle(color: Colors.black)),
+          ),
+          TextButton(
+            onPressed: () async {
+              String uid = FirebaseAuth.instance.currentUser!.uid;
+              // Navigator.of(context).pop();
+              final CollectionReference usersCollection =
+                  await FirebaseFirestore.instance
+                      .collection('Users')
+                      .doc(uid)
+                      .collection('orders');
+              //  final CollectionReference usersCollection = await FirebaseFirestore.instance.collection('cart');
+              // print(usersCollection.parent);
+              Random random = new Random();
+              int randomNumber = random.nextInt(100000) + 1;
+              var date = DateTime.now();
+              print("date$date");
+              print("random$randomNumber");
+              // List yourItemList = [];
+              // for (int i = 0; i < cartItems.length; i++)
+              //   yourItemList.add({
+              //     "name": itemName.toList()[i],
+              //     "price": rate.toList()[i],
+              //     "quantity": quantity.toList()[i]
+              //   });
+
+              Map<String, dynamic> orderDetails = {
+                'userName': name.text,
+                'phone': PhoneNumber.text,
+                'email': email.text,
+                'address': addresse.text,
+                'date': date.toString(),
+                'orderPrice': total().toString(),
+                'orderNumber': randomNumber,
+                'orderDetails': cartItems.map<Map>((e) => e.toMap()).toList(),
+              };
+              usersCollection.add(orderDetails);
+              final CollectionReference ordersCollection = FirebaseFirestore
+                  .instance
+                  .collection('Users')
+                  .doc(uid)
+                  .collection('cart');
+              final QuerySnapshot querySnapshot = await ordersCollection.get();
+
+              querySnapshot.docs.forEach((document) {
+                document.reference.delete();
+              });
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => HomeScreen()));
+            },
+            child: const Text('Confirm', style: TextStyle(color: Colors.black)),
           ),
         ],
       ),
-      actions: <Widget>[
-        TextButton(
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-          child: const Text('Close', style: TextStyle(color: Colors.black)),
-        ),
-        TextButton(
-          onPressed: () async {
-            String uid = FirebaseAuth.instance.currentUser!.uid;
-            // Navigator.of(context).pop();
-            final CollectionReference usersCollection = await FirebaseFirestore
-                .instance
-                .collection('Users')
-                .doc(uid)
-                .collection('orders');
-            //  final CollectionReference usersCollection = await FirebaseFirestore.instance.collection('cart');
-            // print(usersCollection.parent);
-            Random random = new Random();
-            int randomNumber = random.nextInt(100000) + 1;
-            var date = DateTime.now();
-            print("date" + date.toString());
-            print("random" + randomNumber.toString());
-            // List yourItemList = [];
-            // for (int i = 0; i < cartItems.length; i++)
-            //   yourItemList.add({
-            //     "name": itemName.toList()[i],
-            //     "price": rate.toList()[i],
-            //     "quantity": quantity.toList()[i]
-            //   });
-
-            Map<String, dynamic> orderDetails = {
-              'userName': name.text,
-              'phone': PhoneNumber.text,
-              'email': email.text,
-              'address': addresse.text,
-              'date': date.toString(),
-              'orderPrice': total().toString(),
-              'orderNumber': randomNumber,
-              'orderDetails': cartItems.map<Map>((e) => e.toMap()).toList(),
-            };
-            usersCollection.add(orderDetails);
-            final CollectionReference ordersCollection = FirebaseFirestore
-                .instance
-                .collection('Users')
-                .doc(uid)
-                .collection('cart');
-            final QuerySnapshot querySnapshot = await ordersCollection.get();
-
-            querySnapshot.docs.forEach((document) {
-              document.reference.delete();
-            });
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => HomeScreen()));
-          },
-          child: const Text('Confirm', style: TextStyle(color: Colors.black)),
-        ),
-      ],
     );
   }
 }
