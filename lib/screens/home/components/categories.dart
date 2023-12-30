@@ -1,25 +1,31 @@
 import 'package:flutter/material.dart';
 
-
-
 import '../../../constants/constants.dart';
 import '../../../data/data.dart';
-import 'favorite.dart';
 
 class Categories extends StatefulWidget {
-  const Categories({Key? key}) : super(key: key);
+  final Function(int) onCategorySelected;
+  const Categories({Key? key, required this.onCategorySelected})
+      : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _CategoriesState createState() => _CategoriesState();
 }
 
 class _CategoriesState extends State<Categories> {
-  int selectedCategoryIndex = 1;
+  int selectedCategoryIndex = 0;
+
+  void _onCategoryTap(int index) {
+    setState(() {
+      selectedCategoryIndex = index;
+    });
+    widget.onCategorySelected(index); // Add this line to use the callback
+  }
 
   Widget _buildCategoryList(BuildContext context, int index) {
     return GestureDetector(
-      onTap: (){
-      },
+      onTap: () => _onCategoryTap(index),
       child: Padding(
         padding: const EdgeInsets.only(left: appPadding),
         child: Column(
@@ -40,7 +46,9 @@ class _CategoriesState extends State<Categories> {
               height: 3,
               width: 25,
               decoration: BoxDecoration(
-                color: selectedCategoryIndex == index ? orange : Colors.transparent,
+                color: selectedCategoryIndex == index
+                    ? orange
+                    : Colors.transparent,
                 borderRadius: BorderRadius.circular(30),
               ),
             )
@@ -56,10 +64,10 @@ class _CategoriesState extends State<Categories> {
 
     return Padding(
       padding: const EdgeInsets.only(top: appPadding),
-      child: Container(
+      child: SizedBox(
         height: size.height * 0.05,
         child: ListView.builder(
-            physics: BouncingScrollPhysics(),
+            physics: const BouncingScrollPhysics(),
             scrollDirection: Axis.horizontal,
             itemCount: categoryList.length,
             itemBuilder: (context, index) {

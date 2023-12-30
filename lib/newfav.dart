@@ -50,6 +50,7 @@ class _ProductPageState extends State<ProductPage> {
         madeIn: doc.data()['madein'],
         ARurl: doc.data()['arurl'],
         isFave: doc.data()['isfave'],
+        category: doc.data()['category'],
         incart: doc.data()['incart'], //  'name':productModel.name,
       );
     }).toList();
@@ -119,7 +120,7 @@ class _ProductPageState extends State<ProductPage> {
                           ),
                           const SizedBox(height: 30),
                           Text(
-                            ' ${productModel.price} EG',
+                            ' ${productModel.price} MYR',
                             style: const TextStyle(
                               overflow: TextOverflow.ellipsis,
                               color: Colors.black54,

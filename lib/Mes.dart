@@ -13,37 +13,33 @@ import 'package:flutter/material.dart';
 import 'package:vector_math/vector_math_64.dart';
 import 'package:path_provider/path_provider.dart';
 import 'dart:io';
-int counter=0;
+
+int counter = 0;
 var selected;
-
-
 
 class Mes extends StatefulWidget {
   final String value;
-  const Mes(
-      {
-        Key? key,
-        required this.value,
-      }):super(key: key);
+  const Mes({
+    Key? key,
+    required this.value,
+  }) : super(key: key);
 
   @override
+  // ignore: no_logic_in_create_state
   State<StatefulWidget> createState() {
-    selected=value.toString();
+    selected = value.toString();
     // TODO: implement createState
     return mes_state();
   }
 }
 
-class mes_state extends State<Mes>
-{
-
+class mes_state extends State<Mes> {
   late ARSessionManager arSessionManager;
   late ARObjectManager arObjectManager;
   late ARAnchorManager arAnchorManager;
 
   List<ARNode> nodes = [];
   List<ARAnchor> anchors = [];
-
 
   @override
   Widget build(BuildContext context) {
@@ -53,35 +49,28 @@ class mes_state extends State<Mes>
         ),
         body: Container(
             child: Stack(children: [
-              ARView(
-                onARViewCreated: onARViewCreated,
-                planeDetectionConfig: PlaneDetectionConfig.horizontal,
-
-
-              ),
-              Align(
-                alignment: FractionalOffset.bottomCenter,
-                child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      ElevatedButton(
-                          onPressed: onRemoveEverything,
-                          child: Text("Remove Everything")),
-                      ElevatedButton(
-                          onPressed: (){
-
-                            onRemoveEverything();
-                            dispose();
-                            Navigator.pop(context);
-                          },
-                          child: Text("back")),
-
-                    ]
-
-                ),
-
-              )
-            ])));
+          ARView(
+            onARViewCreated: onARViewCreated,
+            planeDetectionConfig: PlaneDetectionConfig.horizontal,
+          ),
+          Align(
+            alignment: FractionalOffset.bottomCenter,
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  ElevatedButton(
+                      onPressed: onRemoveEverything,
+                      child: Text("Remove Everything")),
+                  ElevatedButton(
+                      onPressed: () {
+                        onRemoveEverything();
+                        dispose();
+                        Navigator.pop(context);
+                      },
+                      child: Text("back")),
+                ]),
+          )
+        ])));
   }
 
   void onARViewCreated(
@@ -94,32 +83,30 @@ class mes_state extends State<Mes>
     this.arAnchorManager = arAnchorManager;
 
     this.arSessionManager.onInitialize(
-      handleRotation: true,
-      handlePans: true,
-      handleTaps: true ,
-      showFeaturePoints: false,
-      showPlanes: true,
-      showAnimatedGuide: true,
-    );
+          handleRotation: true,
+          handlePans: true,
+          handleTaps: true,
+          showFeaturePoints: false,
+          showPlanes: true,
+          showAnimatedGuide: true,
+        );
     this.arObjectManager.onInitialize();
     this.arSessionManager.onPlaneOrPointTap = onPlaneOrPointTapped;
     this.arObjectManager.onNodeTap = onNodeTapped;
   }
+
   @override
-  Future <void> dispose() async{
+  Future<void> dispose() async {
     // AR_Session_state().dispose();
 
     arSessionManager.dispose();
 
     print("Disposed oxem belah");
     super.dispose();
-
-
-
   }
 
   Future<void> onRemoveEverything() async {
-    counter=0;
+    counter = 0;
     nodes.forEach((node) {
       this.arObjectManager.removeNode(node);
     });
@@ -129,8 +116,6 @@ class mes_state extends State<Mes>
     anchors = [];
   }
 
-
-
   Future<void> onNodeTapped(List<String> nodes) async {
     var number = nodes.length;
     //  this.arSessionManager.onError("Tapped $number node(s)");
@@ -138,40 +123,39 @@ class mes_state extends State<Mes>
 
   Future<void> onPlaneOrPointTapped(
       List<ARHitTestResult> hitTestResults) async {
-    if(counter<0)
+    if (counter < 0)
       print("");
     else {
       counter++;
       var singleHitTestResult = hitTestResults.firstWhere(
-              (hitTestResult) => hitTestResult.type == ARHitTestResultType.plane);
+          (hitTestResult) => hitTestResult.type == ARHitTestResultType.plane);
       if (singleHitTestResult != null) {
         var newAnchor =
-        ARPlaneAnchor(transformation: singleHitTestResult.worldTransform);
+            ARPlaneAnchor(transformation: singleHitTestResult.worldTransform);
         bool? didAddAnchor = await this.arAnchorManager.addAnchor(newAnchor);
         if (didAddAnchor!) {
           this.anchors.add(newAnchor);
-          if(counter>1)
-          {
-
-            double? dist=await this.arSessionManager.getDistanceBetweenAnchors(this.anchors.first, this.anchors.last) ;
-            print("asdasdasdasdasasd        "+ dist.toString());
+          if (counter > 1) {
+            double? dist = await this
+                .arSessionManager
+                .getDistanceBetweenAnchors(
+                    this.anchors.first, this.anchors.last);
+            print("asdasdasdasdasasd        " + dist.toString());
             print(dist);
             this.arSessionManager.onError(dist.toString());
           }
           // Add note to anchor
           var newNode = ARNode(
-
             type: NodeType.localGLTF2,
-
-             uri: "assets/pin/scene.gltf",
+            uri: "assets/pin/scene.gltf",
             transformation: singleHitTestResult.worldTransform,
             scale: Vector3(0.1, 0.1, 0.1),
             position: Vector3(0, 0, 0),
-
           );
 
-          bool? didAddNodeToAnchor =
-          await this.arObjectManager.addNode(newNode, planeAnchor: newAnchor);
+          bool? didAddNodeToAnchor = await this
+              .arObjectManager
+              .addNode(newNode, planeAnchor: newAnchor);
           if (didAddNodeToAnchor!) {
             this.nodes.add(newNode);
           } else {
@@ -181,7 +165,6 @@ class mes_state extends State<Mes>
           //this.arSessionManager.onError("Adding Anchor failed");
         }
       }
-
     }
   }
 
@@ -200,5 +183,4 @@ class mes_state extends State<Mes>
       appDocDir.deleteSync(recursive: true);
     }
   }
-
 }

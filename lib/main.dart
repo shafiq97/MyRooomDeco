@@ -33,8 +33,8 @@ class MyApp extends StatelessWidget {
           title: 'Smart Home',
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
-            primarySwatch: Colors.blue,
-          ),
+              primarySwatch: Colors.pink,
+              scaffoldBackgroundColor: Colors.pink[20]),
           home: FirebaseAuth.instance.currentUser != null
               ? HomeScreen()
               : LoginScreen()),

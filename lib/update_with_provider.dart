@@ -103,7 +103,7 @@ class _CartPageState extends State<CartPage> {
     // readRecords();
     return Scaffold(
       appBar: AppBar(
-        title: Text('Cart'),
+        title: const Text('Cart'),
       ),
       body: ListView.builder(
         itemCount: cartItems.length,
@@ -149,7 +149,7 @@ class _CartPageState extends State<CartPage> {
                             children: [
                               Container(
                                 padding:
-                                    new EdgeInsets.symmetric(horizontal: 13),
+                                    const EdgeInsets.symmetric(horizontal: 13),
                                 child: Text(
                                   'by ${item.manufacture}',
                                   maxLines: 2,
@@ -164,7 +164,7 @@ class _CartPageState extends State<CartPage> {
                               ),
                             ],
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 12,
                           ),
                           Padding(
@@ -172,7 +172,7 @@ class _CartPageState extends State<CartPage> {
                             child: Row(
                               children: [
                                 Text(
-                                  ' ${item.price} EG',
+                                  ' ${item.price} RM',
                                   style: const TextStyle(
                                     overflow: TextOverflow.ellipsis,
                                     color: Colors.black54,
@@ -184,7 +184,7 @@ class _CartPageState extends State<CartPage> {
                                   child: Row(
                                     children: [
                                       IconButton(
-                                        icon: Icon(Icons.add),
+                                        icon: const Icon(Icons.add),
                                         onPressed: () async {
                                           //Provider.of<CartProvider>(context,listen: false).setQuantity(item);
                                           // int quantity=1;
@@ -232,7 +232,7 @@ class _CartPageState extends State<CartPage> {
                                       Text(
                                           '${Provider.of<CartProvider>(context, listen: true).q.toString()}'),
                                       IconButton(
-                                        icon: Icon(Icons.remove),
+                                        icon: const Icon(Icons.remove),
                                         onPressed: () async {
                                           if (item.quantity > 1) {
                                             int quantity = 1;
@@ -293,7 +293,6 @@ class _CartPageState extends State<CartPage> {
 
                                 Query<Map<String, dynamic>> query = productsRef
                                     .where('modelname', isEqualTo: item.name);
-                                print("cart item" + item.name);
                                 QuerySnapshot<Map<String, dynamic>>
                                     querySnapshot = await query.get();
                                 querySnapshot.docs.forEach((doc) async {
@@ -305,7 +304,7 @@ class _CartPageState extends State<CartPage> {
 
                                 print("delete cart item");
                               },
-                              icon: Icon(Icons.delete)),
+                              icon: const Icon(Icons.delete)),
                         ],
                       ),
                     ],

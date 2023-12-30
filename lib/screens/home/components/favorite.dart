@@ -130,7 +130,7 @@ class FavoriteScreen extends StatelessWidget {
                               ),
                               const SizedBox(height: 30),
                               Text(
-                                ' ${productModel.price} EG',
+                                ' ${productModel.price} MYR',
                                 style: const TextStyle(
                                   overflow: TextOverflow.ellipsis,
                                   color: Colors.black54,

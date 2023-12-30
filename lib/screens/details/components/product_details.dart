@@ -40,6 +40,7 @@ class add_notes_state extends State<add_notes> {
       rating: 1,
       style: "",
       madeIn: "",
+      category: "",
       ARurl: "ARurl");
 
   static List<ProductModel> Fav_lst = [];

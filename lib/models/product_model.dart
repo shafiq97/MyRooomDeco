@@ -1,4 +1,4 @@
-class ProductModel{
+class ProductModel {
   String name;
   String imageUrl;
   int price;
@@ -9,9 +9,10 @@ class ProductModel{
   String style;
   String madeIn;
   String ARurl;
-  bool isFave=false;
-  bool incart=false;
+  bool isFave = false;
+  bool incart = false;
   int quantity;
+  String category;
 
   ProductModel({
     required this.name,
@@ -24,9 +25,9 @@ class ProductModel{
     required this.rating,
     required this.style,
     required this.madeIn,
-
+    required this.category,
     required this.ARurl,
-    this.isFave=false,
-    this.incart=false,
+    this.isFave = false,
+    this.incart = false,
   });
 }

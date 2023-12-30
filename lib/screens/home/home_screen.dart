@@ -50,15 +50,15 @@ class _HomeScreenState extends State<HomeScreen> {
         //appBar: AppBar(leading: Icon(Icons.accessibility),),
         drawer: NavigationDrawer(),
         backgroundColor: Colors.white,
-        body: const SafeArea(
+        body: SafeArea(
           child: Padding(
-            padding: EdgeInsets.only(top: 15),
+            padding: const EdgeInsets.only(top: 15),
             child: Column(
               children: [
                 // CustomAppBar(),
-                MySearchBar(),
-                Categories(),
-                Products(),
+                const MySearchBar(),
+                Categories(onCategorySelected: _handleCategorySelected),
+                Products(category: selectedCategory),
               ],
             ),
           ),
@@ -81,6 +81,13 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       );
+
+  String selectedCategory = "Interiors"; // or any default category
+  void _handleCategorySelected(int index) {
+    setState(() {
+      selectedCategory = categoryList[index];
+    });
+  }
 }
 
 class NavigationDrawer extends StatelessWidget {
@@ -91,104 +98,107 @@ class NavigationDrawer extends StatelessWidget {
 
     // TODO: implement build
     return Drawer(
-      child: Column(
-        children: <Widget>[
-          UserAccountsDrawerHeader(
-            accountName: const Text(""),
-            accountEmail: Text(email!, style: const TextStyle(fontSize: 17)),
-          ),
-          ListTile(
-            leading: const Icon(Icons.home),
-            title: const Text('Home'),
-            onTap: () {
-              // Navigate to home screen
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.favorite),
-            title: const Text('Favorites'),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => ProductPage()),
-              );
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.shopping_cart),
-            title: const Text('Cart'),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => CartPage()),
-              );
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.home),
-            title: const Text('My Orders'),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => const Orders()),
-              );
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.compare_arrows),
-            title: const Text('Area measurement'),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (_) => const Mes(value: "assets/s14/chair.gltf")),
-              );
-              // Navigate to favorites screen
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.rate_review),
-            title: const Text('Rate us'),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (_) => Reviewes(),
-                ),
-              );
-            },
-          ),
-          const Divider(),
-          ListTile(
-            leading: const Icon(Icons.settings),
-            title: const Text('Settings'),
-            onTap: () {
-              // Navigate to settings screen
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.help),
-            title: const Text('Help'),
-            onTap: () {
-              // Navigate to help screen
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.logout),
-            title: const Text('Logout'),
-            onTap: () {
-              auth.signOut().then((value) {
-                print('signout');
+      child: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            UserAccountsDrawerHeader(
+              accountName: const Text(""),
+              accountEmail: Text(email!, style: const TextStyle(fontSize: 17)),
+            ),
+            ListTile(
+              leading: const Icon(Icons.home),
+              title: const Text('Home'),
+              onTap: () {
+                // Navigate to home screen
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.favorite),
+              title: const Text('Favorites'),
+              onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (_) => LoginScreen()),
+                  MaterialPageRoute(builder: (_) => ProductPage()),
                 );
-              });
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.shopping_cart),
+              title: const Text('Cart'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => CartPage()),
+                );
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.home),
+              title: const Text('My Orders'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const Orders()),
+                );
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.compare_arrows),
+              title: const Text('Area measurement'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (_) =>
+                          const Mes(value: "assets/s14/chair.gltf")),
+                );
+                // Navigate to favorites screen
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.rate_review),
+              title: const Text('Rate us'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => Reviewes(),
+                  ),
+                );
+              },
+            ),
+            const Divider(),
+            ListTile(
+              leading: const Icon(Icons.settings),
+              title: const Text('Settings'),
+              onTap: () {
+                // Navigate to settings screen
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.help),
+              title: const Text('Help'),
+              onTap: () {
+                // Navigate to help screen
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.logout),
+              title: const Text('Logout'),
+              onTap: () {
+                auth.signOut().then((value) {
+                  print('signout');
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => LoginScreen()),
+                  );
+                });
 
-              // Navigate to help screen
-            },
-          ),
-        ],
+                // Navigate to help screen
+              },
+            ),
+          ],
+        ),
       ),
     );
   }

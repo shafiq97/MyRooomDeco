@@ -102,7 +102,7 @@ class _cartScreenState extends State<cartScreen> {
                                 ),
                                 const SizedBox(height: 15),
                                 Text(
-                                  '\$  ${(productModel.price) * widget.counters[index]} EG',
+                                  'RM  ${(productModel.price) * widget.counters[index]}',
                                   style: const TextStyle(
                                     overflow: TextOverflow.ellipsis,
                                     color: Colors.orange,
@@ -352,7 +352,7 @@ class _cartScreenState extends State<cartScreen> {
             ),
             const SizedBox(width: 30),
             Text(
-              '\$  ${widget.total} EG',
+              '\RM  ${widget.total}',
               style: const TextStyle(color: Colors.black, fontSize: 30),
             )
           ],
