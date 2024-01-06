@@ -1,45 +1,46 @@
-import 'package:gradutionprojec/screens/home/home_screen.dart';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:email_validator/email_validator.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
+import 'package:gradutionprojec/noti_service.dart';
 import 'package:gradutionprojec/user_model.dart';
 
 import 'Login_screen.dart';
 import 'data/data.dart';
 import 'default_textformfield.dart';
+import 'package:mailer/mailer.dart';
+import 'package:mailer/smtp_server.dart';
 
 class RegisterScreen extends StatefulWidget {
   static String verificationID = "";
+
+  const RegisterScreen({Key? key}) : super(key: key);
 
   @override
   State<RegisterScreen> createState() => _RegisterScreenState();
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
+  // ignore: non_constant_identifier_names
   bool ValidatePassword(String pass) {
-    String _password = pass.trim();
+    String password = pass.trim();
     Future.delayed(Duration.zero, () {
-      if (_password.isEmpty) {
+      if (password.isEmpty) {
         setState(() {
           password_strength = 0;
         });
-      } else if (_password.length < 6) {
+      } else if (password.length < 6) {
         setState(() {
           password_strength = 1 / 4;
         });
-      } else if (_password.length < 8) {
+      } else if (password.length < 8) {
         setState(() {
           password_strength = 2 / 4;
         });
       } else {
-        if (passwordValid.hasMatch(_password)) {
+        if (passwordValid.hasMatch(password)) {
           setState(() {
             password_strength = 4 / 4;
           });
@@ -122,6 +123,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 fieldonChange: (value) {
                                   formKey.currentState!.validate();
                                 },
+                                // ignore: non_constant_identifier_names
                                 fieldValidator: (Email) {
                                   if (Email.isEmpty) {
                                     return 'Enter a Email';
@@ -254,12 +256,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                   } catch (e) {
                                     if (e.toString() ==
                                         "[firebase_auth/unknown] Given String is empty or null") {
-                                      print("*" + e.toString());
+                                      print("*$e");
                                     }
                                     print(e);
                                   }
                                 },
-                                child: Text(
+                                child: const Text(
                                   'REGISTER',
                                   style: TextStyle(
                                       color: Colors.white, fontSize: 16),
@@ -315,19 +317,51 @@ class _RegisterScreenState extends State<RegisterScreen> {
       email: user.Email,
       password: user.Password,
     );
-    /*  await db.collection("Users").add(user.toJason()).whenComplete(() =>
-        // Get.snackbar("success", "your account has been created",
-        //     snackPosition: SnackPosition.BOTTOM
-        // ),
-      print("success")
+    await sendWelcomeEmail(user.Email);
+  }
 
-    ).catchError((error,stackTrace){
-      // Get.snackbar("error", "somthing went wrong",
-      //   snackPosition: SnackPosition.BOTTOM
+  Future<void> sendWelcomeEmail(String recipient) async {
+    String username =
+        'muhammadshafiq457@gmail.com'; // Use environment variables or a config file
+    String password =
+        'elonhuoirgvdeedc'; // Use environment variables or a config file
 
-     // );
-      print(error.toString());
-    });*/
+    final smtpServer = gmail(username, password);
+
+    final message = Message()
+      ..from = Address(username, 'Smart Furniture')
+      ..recipients.add(recipient)
+      ..subject = 'Welcome to Our App! ${DateTime.now()}'
+      ..text = 'Hello! Thank you for registering.'
+      ..html = "<h1>Welcome</h1><p>Thanks for registering to our app!</p>";
+
+    try {
+      final sendReport = await send(message, smtpServer);
+      print('Message sent: $sendReport');
+      // ignore: use_build_context_synchronously
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: const Text('Email Sent'),
+            content: Text('A welcome email has been sent to $recipient.'),
+            actions: <Widget>[
+              TextButton(
+                child: const Text('Close'),
+                onPressed: () {
+                  Navigator.of(context).pop(); // Dismiss the dialog
+                },
+              ),
+            ],
+          );
+        },
+      );
+    } on MailerException catch (e) {
+      print('Message not sent.');
+      for (var p in e.problems) {
+        print('Problem: ${p.code}: ${p.msg}');
+      }
+    }
   }
 
   void phoneAuthentication(String phone) async {

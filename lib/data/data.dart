@@ -7,7 +7,7 @@ import '../models/product_model.dart';
 final p1 = ProductModel(
     name: 'metalic bed ',
     quantity: 1,
-    manufacturer: 'Nabilah',
+    manufacturer: 'Shafiq',
     imageUrl: 'assets/s1/bed.png',
     price: 5600,
     color: 'Black',
@@ -21,7 +21,7 @@ final p1 = ProductModel(
 final p2 = ProductModel(
     name: 'wooden chair ',
     quantity: 1,
-    manufacturer: 'Nabilah',
+    manufacturer: 'Shafiq',
     imageUrl: 'assets/s2/chair.png',
     price: 420,
     color: 'Brown',
@@ -35,7 +35,7 @@ final p2 = ProductModel(
 final p3 = ProductModel(
     name: 'bedroom drawer',
     quantity: 1,
-    manufacturer: 'Nabilah',
+    manufacturer: 'Shafiq',
     imageUrl: 'assets/s3/drawer.png',
     price: 670,
     color: 'Black',
@@ -48,7 +48,7 @@ final p3 = ProductModel(
     ARurl: "assets/s3/drawer.gltf");
 final p4 = ProductModel(
     name: 'pouf',
-    manufacturer: 'Nabilah',
+    manufacturer: 'Shafiq',
     imageUrl: 'assets/s4/pouf.png',
     price: 890,
     color: 'Blue',
@@ -62,7 +62,7 @@ final p4 = ProductModel(
     ARurl: "assets/s4/pouf.gltf");
 final p5 = ProductModel(
     name: 'pink sofa ',
-    manufacturer: 'Nabilah',
+    manufacturer: 'Shafiq',
     imageUrl: 'assets/s5/pinksofa.png',
     price: 3025,
     color: 'Pink',
@@ -76,7 +76,7 @@ final p5 = ProductModel(
     ARurl: "assets/s5/pinksofa.gltf");
 final p6 = ProductModel(
     name: 'black office chair ',
-    manufacturer: 'Nabilah',
+    manufacturer: 'Shafiq',
     imageUrl: 'assets/s6/office_chair.png',
     price: 3025,
     quantity: 1,
@@ -91,7 +91,7 @@ final p6 = ProductModel(
 
 final p7 = ProductModel(
     name: 'pouf  ',
-    manufacturer: 'Nabilah',
+    manufacturer: 'Shafiq',
     imageUrl: 'assets/s7/besame_chair.png',
     price: 930,
     color: 'Pink',
@@ -107,7 +107,7 @@ final p7 = ProductModel(
 final p8 = ProductModel(
     name: 'closet ',
     quantity: 1,
-    manufacturer: 'Nabilah',
+    manufacturer: 'Shafiq',
     imageUrl: 'assets/s8/closet.png',
     price: 8500,
     color: 'Black',
@@ -122,7 +122,7 @@ final p8 = ProductModel(
 final p9 = ProductModel(
     name: 'blue living couch',
     quantity: 1,
-    manufacturer: 'Nabilah',
+    manufacturer: 'Shafiq',
     imageUrl: 'assets/s9/couch.png',
     price: 3025,
     color: 'Blue',
@@ -135,7 +135,7 @@ final p9 = ProductModel(
     ARurl: "assets/s9/couch.gltf");
 final p10 = ProductModel(
     name: 'beige living couch ',
-    manufacturer: 'Nabilah',
+    manufacturer: 'Shafiq',
     imageUrl: 'assets/s10/sofa.png',
     price: 3025,
     color: 'Beige',
@@ -149,7 +149,7 @@ final p10 = ProductModel(
     ARurl: "assets/s10/sofa.gltf");
 final p11 = ProductModel(
     name: 'home chair ',
-    manufacturer: 'Nabilah',
+    manufacturer: 'Shafiq',
     imageUrl: 'assets/s11/chair.png',
     category: "Furniture",
     price: 720,

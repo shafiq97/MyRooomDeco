@@ -50,7 +50,7 @@ class _ProductPageState extends State<ProductPage> {
         madeIn: doc.data()['madein'],
         ARurl: doc.data()['arurl'],
         isFave: doc.data()['isfave'],
-        category: doc.data()['category'],
+        category: "",
         incart: doc.data()['incart'], //  'name':productModel.name,
       );
     }).toList();
